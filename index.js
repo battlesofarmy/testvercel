@@ -4,13 +4,7 @@ const cors = require('cors');
 const port = process.env.PORT || 3000;
 
 // Use Middleware
-app.use(cors(
-  {
-    origin: ['https://myvercel-fugz.vercel.app'],
-    methods: ["POST", "GET"],
-    credentials: true
-  }
-));
+app.use(cors());
 app.use(express.json());
 
 
@@ -49,6 +43,13 @@ async function run() {
     });
 
 
+    // Get all todos
+    app.get('/fahim', async (req, res) => {
+        res.send("hello fahim")
+    });
+  
+
+
 
 
 
@@ -67,6 +68,15 @@ run().catch(console.dir);
 app.get('/', (req, res)=>{
     res.send('Hello');
     console.log('World');
+})
+
+
+
+
+
+app.get('/faihm', (req, res)=>{
+  res.send('Johfa tahsin');
+  console.log('World');
 })
 
 
